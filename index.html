@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Restaurant Ordering App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🍽️ Smart Restaurant</h1>
+        <p>Smart Table Ordering & Billing System</p>
+    </header>
+
+    <main class="container">
+
+        <section class="table-selection">
+            <label for="table">Select Table:</label>
+            <select id="table">
+                <option value="1">Table 1</option>
+                <option value="2">Table 2</option>
+                <option value="3">Table 3</option>
+                <option value="4">Table 4</option>
+                <option value="5">Table 5</option>
+            </select>
+
+            <input type="text" id="search"
+                   placeholder="Search food...">
+        </section>
+
+        <div class="layout">
+            <section class="menu-section">
+                <h2>Our Menu</h2>
+
+                <div class="categories">
+                    <button onclick="filterMenu('All')">All</button>
+                    <button onclick="filterMenu('Snacks')">Snacks</button>
+                    <button onclick="filterMenu('Meals')">Meals</button>
+                    <button onclick="filterMenu('Drinks')">Drinks</button>
+                </div>
+
+                <div id="menu" class="menu"></div>
+            </section>
+
+            <section class="cart-section">
+                <h2>🛒 Your Order</h2>
+
+                <div id="cartItems">
+                    Your cart is empty.
+                </div>
+
+                <hr>
+
+                <p>Subtotal: <span id="subtotal">₹0.00</span></p>
+                <p>GST (5%): <span id="tax">₹0.00</span></p>
+                <h3>Total: <span id="total">₹0.00</span></h3>
+
+                <button class="order-btn" onclick="placeOrder()">
+                    Place Order
+                </button>
+
+                <button class="clear-btn" onclick="clearCart()">
+                    Clear Cart
+                </button>
+            </section>
+        </div>
+
+        <section id="billSection" class="bill-section" hidden>
+            <h2>Restaurant Bill</h2>
+            <div id="billContent"></div>
+            <button onclick="window.print()">Print Bill</button>
+            <button onclick="newOrder()">New Order</button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Thank you for visiting Smart Restaurant!</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
